@@ -1,0 +1,33 @@
+SQL Queries:
+CREATE TABLE Car (
+    CarID SERIAL PRIMARY KEY,
+    Company VARCHAR(50),
+    Model VARCHAR(50),
+    Seater INT,
+    FuelType VARCHAR(20),
+    Type VARCHAR(20),
+    Price INT,
+    Sold BOOLEAN DEFAULT FALSE
+);
+
+Insert Query:
+INSERT INTO Car (Company, Model, Seater, FuelType, Type, Price, Sold) 
+VALUES ('Toyota', 'Corolla', 5, 'Petrol', 'Sedan', 20000, FALSE);
+
+
+Application Queries:
+Search Car: 
+	"SELECT * FROM Car WHERE CarID = ?";
+Add Car into DB:
+	"INSERT INTO Car (Company, Model, Seater, FuelType, Type, Price,Sold) VALUES (?, ?, ?, ?, ?, ?,?)";
+Update Car Price By ID:
+	"UPDATE Car SET Price = ? WHERE CarID = ?";
+Update Car set Sold:
+	"UPDATE Car SET Sold = TRUE WHERE CarID = ?";
+Search By Attributes:
+	"SELECT * FROM Car WHERE Sold = TRUE";	
+	"SELECT * FROM Car WHERE Sold = FALSE";	
+	"SELECT * FROM Car WHERE Company = ?";
+	"SELECT * FROM Car WHERE Price BETWEEN ? AND ?";
+	"SELECT * FROM Car WHERE Type = ?";  
+
